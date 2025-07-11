@@ -18,7 +18,7 @@ class Usuario:
     def __init__(self, nombre):
         self.nombre = nombre
         self.libros_prestados = []
-        print(f"👤 Usuario creado: {self.nombre}")
+        print(f" Usuario creado: {self.nombre}")
 
     def prestar_libro(self, libro):
         self.libros_prestados.append(libro)
