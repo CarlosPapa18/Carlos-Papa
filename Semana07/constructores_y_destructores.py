@@ -4,14 +4,14 @@ class Libro:
         # Constructor: inicializa los atributos del objeto
         self.titulo = titulo
         self.autor = autor
-        print(f"📘 Libro creado: '{self.titulo}' por {self.autor}")
+        print(f" Libro creado: '{self.titulo}' por {self.autor}")
 
     def mostrar_info(self):
         print(f"Título: {self.titulo} | Autor: {self.autor}")
 
     def __del__(self):
         # Destructor: muestra un mensaje cuando se elimina el objeto
-        print(f"📕 Libro eliminado: '{self.titulo}'")
+        print(f" Libro eliminado: '{self.titulo}'")
 
 # Clase Usuario: representa un usuario que toma libros prestados
 class Usuario:
@@ -30,7 +30,7 @@ class Usuario:
 
     def __del__(self):
         # Destructor: mensaje cuando se elimina al usuario
-        print(f"👋 Usuario eliminado: {self.nombre}")
+        print(f" Usuario eliminado: {self.nombre}")
 
 # Código principal del programa
 if __name__ == "__main__":
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     usuario1.prestar_libro(libro2)
 
     # Mostrar libros prestados
-    print("\n📚 Libros actualmente prestados:")
+    print("\n Libros actualmente prestados:")
     for libro in usuario1.libros_prestados:
         libro.mostrar_info()
 
