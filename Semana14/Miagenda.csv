@@ -1,0 +1,5 @@
+mi_agenda/
+├─ src/
+│  └─ agenda.py
+├─ requirements.txt
+└─ README.md
