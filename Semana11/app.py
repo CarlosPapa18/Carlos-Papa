@@ -1,5 +1,5 @@
 # main.py
-# Menú interactivo para usar el sistema de inventario
+# Menú interactivo para usar el sistema de inventario.txt
 
 from inventario import Inventario
 from producto import Producto
@@ -13,11 +13,11 @@ def menu():
         # Mostrar menú de opciones
         print("\n=== MENÚ INVENTARIO ===")
         print("1. Agregar producto")
-        print("2. Mostrar inventario")
+        print("2. Mostrar inventario.txt")
         print("3. Buscar producto")
         print("4. Actualizar cantidad")
         print("5. Eliminar producto")
-        print("6. Guardar inventario")
+        print("6. Guardar inventario.txt")
         print("7. Salir")
         opcion = input("Seleccione una opción: ")
 
@@ -51,7 +51,7 @@ def menu():
             codigo = input("Código del producto a eliminar: ")
             inventario.eliminar_producto(codigo)
         elif opcion == "6":
-            # Guardar inventario en archivo CSV
+            # Guardar inventario.txt en archivo CSV
             inventario.guardar_en_archivo()
         elif opcion == "7":
             # Guardar y salir del programa

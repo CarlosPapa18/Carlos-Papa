@@ -1,0 +1,4 @@
+Codigo,Nombre,Cantidad,Precio
+P001,Leche,20,1.5
+P002,Pan,50,0.8
+P003,Huevos,30,2.0

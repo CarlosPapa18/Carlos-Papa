@@ -1,5 +1,5 @@
-# inventario.py
-# Clase que maneja el inventario completo utilizando un diccionario para optimización de búsquedas
+# inventario.txt.py
+# Clase que maneja el inventario.txt completo utilizando un diccionario para optimización de búsquedas
 
 import csv
 from producto import Producto
@@ -11,7 +11,7 @@ class Inventario:
         self.productos = {}
 
     def agregar_producto(self, producto):
-        # Agrega un producto al inventario
+        # Agrega un producto al inventario.txt
         # Verifica si el código ya existe para evitar duplicados
         if producto.codigo in self.productos:
             print(f"El producto {producto.codigo} ya existe. Actualiza la cantidad si es necesario.")
@@ -20,9 +20,9 @@ class Inventario:
             print(f"Producto {producto.nombre} agregado correctamente.")
 
     def mostrar_inventario(self):
-        # Muestra todos los productos del inventario
+        # Muestra todos los productos del inventario.txt
         if not self.productos:
-            print("El inventario está vacío.")
+            print("El inventario.txt está vacío.")
         else:
             print("=== Inventario ===")
             for p in self.productos.values():
@@ -47,16 +47,16 @@ class Inventario:
             print("Producto no encontrado.")
 
     def eliminar_producto(self, codigo):
-        # Elimina un producto del inventario por su código
+        # Elimina un producto del inventario.txt por su código
         if codigo in self.productos:
             nombre = self.productos[codigo].nombre
             del self.productos[codigo]
-            print(f"Producto {nombre} eliminado del inventario.")
+            print(f"Producto {nombre} eliminado del inventario.txt.")
         else:
             print("Producto no encontrado.")
 
-    def guardar_en_archivo(self, nombre_archivo="inventario.csv"):
-        # Guarda el inventario completo en un archivo CSV
+    def guardar_en_archivo(self, nombre_archivo="inventario.txt.csv"):
+        # Guarda el inventario.txt completo en un archivo CSV
         with open(nombre_archivo, mode="w", newline="") as file:
             writer = csv.writer(file)
             # Escribir encabezados
@@ -66,7 +66,7 @@ class Inventario:
                 writer.writerow([p.codigo, p.nombre, p.cantidad, p.precio])
         print("Inventario guardado correctamente.")
 
-    def cargar_desde_archivo(self, nombre_archivo="inventario.csv"):
+    def cargar_desde_archivo(self, nombre_archivo="inventario.txt.csv"):
         # Carga los productos desde un archivo CSV
         try:
             with open(nombre_archivo, mode="r") as file:
@@ -77,4 +77,4 @@ class Inventario:
                     self.productos[p.codigo] = p
             print("Inventario cargado correctamente.")
         except FileNotFoundError:
-            print("Archivo no encontrado. Se iniciará con inventario vacío.")
+            print("Archivo no encontrado. Se iniciará con inventario.txt vacío.")

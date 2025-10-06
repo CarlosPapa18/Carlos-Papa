@@ -1,10 +1,10 @@
-# inventario.py
-# Manejo del inventario y persistencia en archivo inventario.txt
+# inventario.txt.py
+# Manejo del inventario.txt y persistencia en archivo inventario.txt.txt
 
 from producto import Producto
 
 class Inventario:
-    def __init__(self, archivo="inventario.txt"):
+    def __init__(self, archivo="inventario.txt.txt"):
         self.archivo = archivo
         self.productos = []
         self._cargar_desde_archivo()
@@ -12,7 +12,7 @@ class Inventario:
     # ================== CARGAR ==================
     def _cargar_desde_archivo(self):
         """
-        Lee inventario.txt (UTF-8 o UTF-8 con BOM).
+        Lee inventario.txt.txt (UTF-8 o UTF-8 con BOM).
         Formato esperado por línea: ID;Nombre;Cantidad;Precio
         """
         try:
@@ -36,7 +36,7 @@ class Inventario:
         except FileNotFoundError:
             open(self.archivo, "w", encoding="utf-8").close()
         except PermissionError:
-            print("[ERROR] No tienes permisos para leer el archivo de inventario.")
+            print("[ERROR] No tienes permisos para leer el archivo de inventario.txt.")
         except Exception as e:
             print(f"[ERROR] Error inesperado al cargar: {e}")
 
@@ -89,7 +89,7 @@ class Inventario:
 
     def mostrar_todos(self):
         if not self.productos:
-            print("[INFO] No hay productos en el inventario.")
+            print("[INFO] No hay productos en el inventario.txt.")
             return
         print("Inventario actual:")
         for p in self.productos:
